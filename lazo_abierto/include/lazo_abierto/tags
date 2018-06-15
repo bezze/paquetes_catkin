@@ -1,0 +1,11 @@
+FeedForwardController	FeedForwardController.h	3
+TrajectoryFollower	TrajectoryFollower.h	4
+TrajectoryFollower::cmd_pub_	TrajectoryFollower.h	36
+TrajectoryFollower::current_trajectory_	TrajectoryFollower.h	44
+TrajectoryFollower::getInitialTime	TrajectoryFollower.h	/^    const ros::Time& getInitialTime() const$/
+TrajectoryFollower::getTrajectory	TrajectoryFollower.h	/^    const robmovil_msgs::Trajectory& getTrajectory/
+TrajectoryFollower::nh_	TrajectoryFollower.h	32
+TrajectoryFollower::stop_timer	TrajectoryFollower.h	/^    void stop_timer() { timer_.stop(); }$/
+TrajectoryFollower::t0_	TrajectoryFollower.h	41
+TrajectoryFollower::timer_	TrajectoryFollower.h	34
+TrajectoryFollower::trajectory_sub_	TrajectoryFollower.h	38

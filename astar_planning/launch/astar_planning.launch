@@ -1,0 +1,19 @@
+<launch>
+  <arg name="debug" default="true"/>
+
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find robmovil_ekf)/launch/rosconsole.conf" if="$(arg debug)"/>
+
+  <!-- Set use_sim_time true for datasets-->
+  <param name="use_sim_time" value="true"/>
+
+  <!-- Run clock publisher-->
+  <node pkg="vrep_util" type="clock_publisher" name="clock_publisher" output="screen" />
+  
+  <node pkg="modelo_diferencial" type="pioneer_odometry" name="pioneer_odometry" output="screen"/>
+
+  <node pkg="astar_planning" type="astar_planning" name="astar_planning" output="screen" />
+  
+  <node pkg="lazo_cerrado" type="trajectory_follower" name="trajectory_follower" output="screen" >
+      <param name="goal_selection" type="str" value="PURSUIT_BASED"/>
+  </node>
+</launch>

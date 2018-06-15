@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package>
+  <name>rrt_pioneer_planning</name>
+  <version>0.0.0</version>
+  <description>Implementacion del algoritmo RRT para la planificacion de trayectorias con robot pioneer</description>
+
+  <maintainer email="gcastro@todo.todo">tfischer</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>robmovil_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>robmovil_planning</build_depend>
+  <build_depend>rrt_planning</build_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>robmovil_planning</run_depend>
+  <run_depend>rrt_planning</run_depend>
+</package>

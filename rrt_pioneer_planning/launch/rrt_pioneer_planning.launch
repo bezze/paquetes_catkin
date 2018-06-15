@@ -1,0 +1,35 @@
+<launch>
+  <arg name="debug" default="true"/>
+
+  <env name="ROSCONSOLE_CONFIG_FILE" value="$(find robmovil_ekf)/launch/rosconsole.conf" if="$(arg debug)"/>
+
+  <!-- Set use_sim_time true for datasets-->
+  <param name="use_sim_time" value="true"/>
+
+  <!-- Run clock publisher-->
+  <node pkg="vrep_util" type="clock_publisher" name="clock_publisher" output="screen" />
+  
+  <node pkg="modelo_diferencial" type="pioneer_odometry" name="pioneer_odometry" output="screen"/>
+  
+  <!-- Seguimiento: es posible activar lazo abierto/cerrado comentando y descomentando las lineas correspondientes -->
+  <!--<node pkg="lazo_abierto" type="trajectory_follower" name="trajectory_follower" output="screen" /> -->
+  
+   <node pkg="lazo_cerrado" type="trajectory_follower" name="trajectory_follower" output="screen" >
+    <param name="goal_selection" type="str" value="PURSUIT_BASED"/>
+  </node> 
+
+  <node pkg="rrt_pioneer_planning" type="rrt_pioneer_planning" name="rrt_pioneer_planning" output="screen" > 
+    <param name="goal_bias" type="double" value="0.3"/>
+    <param name="max_iterations" type="int" value="20000"/>
+    <param name="linear_velocity_stepping" type="double" value="0.8"/>
+    <param name="angular_velocity_stepping" type="double" value="0.5"/>
+  </node>
+  
+  <!-- Defaults:
+  	goal_bias = 0.2
+  	max_iterations = 20000
+  	linear_velocity_stepping = 0.05
+  	angular_velocity_stepping = 0.025
+  -->
+    
+</launch>

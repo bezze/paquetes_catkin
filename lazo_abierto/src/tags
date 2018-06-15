@@ -1,0 +1,17 @@
+FeedForwardController::FeedForwardController	FeedForwardController.cpp	/^FeedForwardController::FeedForwardController(ros::/
+FeedForwardController::control	FeedForwardController.cpp	/^bool FeedForwardController::control(const ros::Tim/
+Mtrajectory_follower_node.cpp	trajectory_follower_node.cpp	/^int main(int argc, char** argv)$/
+Mtrajectory_generator_node.cpp	trajectory_generator_node.cpp	/^int main(int argc, char** argv)$/
+Mtrajectory_waypoints_node.cpp	trajectory_waypoints_node.cpp	/^int main(int argc, char** argv)$/
+TrajectoryFollower::TrajectoryFollower	TrajectoryFollower.cpp	/^TrajectoryFollower::TrajectoryFollower(ros::NodeHa/
+TrajectoryFollower::handleNewTrajectory	TrajectoryFollower.cpp	/^void TrajectoryFollower::handleNewTrajectory(const/
+TrajectoryFollower::nextPointIndex	TrajectoryFollower.cpp	/^bool TrajectoryFollower::nextPointIndex(const ros:/
+TrajectoryFollower::timerCallback	TrajectoryFollower.cpp	/^void TrajectoryFollower::timerCallback(const ros::/
+build_sin_trajectory	trajectory_generator_node.cpp	/^void build_sin_trajectory(double stepping, double /
+build_spline_trajectory	trajectory_generator_node.cpp	/^void build_spline_trajectory(double stepping, std:/
+lineal_interp	FeedForwardController.cpp	/^double lineal_interp(const ros::Time& t0, const ro/
+planBox	trajectory_waypoints_node.cpp	/^std::vector<waypoint> planBox()$/
+waypoint	trajectory_waypoints_node.cpp	9
+waypoint::target_ang_vel	trajectory_waypoints_node.cpp	12
+waypoint::target_lin_vel	trajectory_waypoints_node.cpp	11
+waypoint::time_from_start	trajectory_waypoints_node.cpp	10

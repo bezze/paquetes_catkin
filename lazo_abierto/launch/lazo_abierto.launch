@@ -1,0 +1,29 @@
+<launch>
+
+  <!-- get clock from vrep simulation -->
+  <param name="use_sim_time" value="true"/>
+  <node pkg="vrep_util" type="clock_publisher" name="vrep_clock" output="screen" />
+
+  <node pkg="modelo_diferencial" type="pioneer_odometry" name="pioneer_odometry" output="screen" />
+
+  <node pkg="lazo_abierto" type="trajectory_follower" name="trajectory_follower" output="screen" />
+  
+  <node pkg="lazo_abierto" type="trajectory_generator" name="trajectory_generator" output="screen" >
+
+    <!-- trajectory sampling time steps -->
+    <param name="stepping" type="double" value="1"/>
+    
+    <!-- define type of trajectory: "sin" or "spline" -->
+    <param name="trajectory_type" type="str" value="spline"/>
+    
+    <!-- configuration parameters while on "sin" trajectory type -->
+    <param name="total_time" type="double" value="200."/>
+    <param name="amplitude" type="double" value="10."/>
+    <param name="cycles" type="double" value="1."/>
+    
+    <!-- list of waypoint parameters while on "spline" trajectory type 
+    NOTE: each waypoint must have 4 values: time(sec), position_x(m), position_y(m), orientation(rad)-->
+    <rosparam param="spline_waypoints">[0., 0., 0., 0., 100., 5., 0., 1.57, 200., 5., 5., 3.14, 300., 0., 5., 4.71, 400., 0., 0., 0.]</rosparam>
+  </node>
+
+</launch>
